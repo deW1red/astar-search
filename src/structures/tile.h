@@ -1,19 +1,23 @@
 #include "scoreable.h"
-
+#include "tilestates.h"
 #ifndef TILE_H
 #define TILE_H
 
 class tile: public scoreable
 {
     int x,y;
-    bool blockedState;
+    state tileState;
+
 public:
     tile();
-    tile(int xcord, int ycord,bool blocked);
+    tile(int xcord, int ycord,state newState);
 
-    void setX(int xcord),setY(int ycord),setState(bool blocked);
+    void setX(int xcord),setY(int ycord),setState(state newState);
     int getX(),getY();
-    bool isBlocked();
+
+    state getState();
+    char printTile();
+    
 };
 
 #endif

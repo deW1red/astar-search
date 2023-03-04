@@ -1,16 +1,18 @@
-#include "scoreable.h"
 #include "tile.h"
+
+#include "scoreable.h"
+#include "tilestates.h"
 
 tile::tile(){
     x = 0;
     y = 0;
-    blockedState = false;
+    tileState = state::empty;
 }
 
-tile::tile(int xcord, int ycord,bool blocked){
+tile::tile(int xcord, int ycord,state newState){
     x = xcord;
     y = ycord;
-    blockedState = blocked;
+    tileState = newState;
 }
 
 void tile::setX(int xcord){
@@ -19,8 +21,8 @@ void tile::setX(int xcord){
 void tile::setY(int ycord){
     y = ycord;
 }
-void tile::setState(bool blocked){
-    blockedState = blocked;
+void tile::setState(state newState){
+    tileState = newState;
 }
 
 int tile::getX(){
@@ -29,6 +31,9 @@ int tile::getX(){
 int tile::getY(){
     return y;
 }
-bool tile::isBlocked(){
-    return blockedState;
+state tile::getState(){
+    return tileState;
+}
+char tile::printTile(){
+    return stateToChar(tileState);
 }
