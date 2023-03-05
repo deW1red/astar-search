@@ -17,6 +17,7 @@ public:
 
     state getState();
     char printTile();
+    int getScore(tile* startTile,tile* goalTile,float (*heur)(tile* current,tile* goal));
     
 };
 

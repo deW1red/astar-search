@@ -3,11 +3,13 @@
 #include "structures/tile.h"
 #include "structures/tilestates.h"
 #include "structures/priority_queue.h"
+#include "structures/node.h"
+#include "algorithms/heuristics.h"
 #include <random>
 #include <cstdlib>
 #include <time.h>
 using namespace std;
-
+node* a,b;
 
 int main(){
     srand(time(NULL));
@@ -23,5 +25,7 @@ int main(){
     mainGrid.tileAt(0,0)->setState(state::start);
     mainGrid.tileAt(9,9)->setState(state::end);
     mainGrid.printGrid();
+    cout<<"\n";
+    cout<<mainGrid.tileAt(5,5)->getScore(mainGrid.tileAt(0,0),mainGrid.tileAt(9,9),&cartesian);
     return 0;
 }

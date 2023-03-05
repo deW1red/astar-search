@@ -2,5 +2,4 @@
 #include "random"
 
 int scoreable::getScore(){
-    return rand()%101;
 }

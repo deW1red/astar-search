@@ -2,6 +2,7 @@
 
 #include "scoreable.h"
 #include "tilestates.h"
+#include <cmath>
 
 tile::tile(){
     x = 0;
@@ -38,6 +39,6 @@ char tile::printTile(){
     return stateToChar(tileState);
 }
 
-int getScore(tile* currentTile,tile* goalTile,int (*heur)(tile* current,tile* goal)){
-    return heur(currentTile,goalTile);
+int tile::getScore(tile* startTile,tile* goalTile,float (*heur)(tile* current,tile* goal)){
+    return sqrt(pow(startTile->getX()-x,2)+pow(startTile->getY()-y,2))+heur(this,goalTile);
 }
