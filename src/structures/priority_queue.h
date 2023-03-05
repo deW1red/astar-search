@@ -3,5 +3,9 @@
 class priority_queue
 {
     
+    public:
+        void push(scoreable item);
+        scoreable pop();
+
 };
 #endif

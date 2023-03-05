@@ -9,5 +9,7 @@ char stateToChar(state st){
         return 'P';
     }else if(st == state::end){
         return 'K';
+    }else{
+        return '$';
     }
 }

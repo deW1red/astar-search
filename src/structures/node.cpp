@@ -1,10 +1,3 @@
 #include "node.h"
 #include "scoreable.h"
-
-class node
-{
-
-public:
-    node(/* args */);
-};
-
+#include "heuristics.h"

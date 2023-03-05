@@ -37,3 +37,7 @@ state tile::getState(){
 char tile::printTile(){
     return stateToChar(tileState);
 }
+
+int getScore(tile* currentTile,tile* goalTile,int (*heur)(tile* current,tile* goal)){
+    return heur(currentTile,goalTile);
+}
