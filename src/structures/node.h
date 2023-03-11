@@ -3,14 +3,14 @@
 #define NODE_H
 class node
 {
-    node *leftChild,*rightChild;
+    node* child;
     scoreable *content;
 
     public:
-    void setLeft(node* a),setRight(node* a),setContent(scoreable* a);
-    node *getLeft(),*getRight();
+    void setChild(node* a),setContent(scoreable* a);
+    node *getChild();
     scoreable* getContent();
-    node(),node(scoreable* nodeContent),node(scoreable* nodeContent,node* nodeLeftChild,node* nodeRightChild);
+    node(),node(scoreable* nodeContent),node(scoreable* nodeContent,node* nodeChild);
 
 };
 #endif

@@ -15,6 +15,5 @@ public:
     tile* tileAt(int x,int y);
 
     void printGrid();
-    //void setXSize(int x),setYSize(int y),setSize(int x, int y);
 };
 #endif
