@@ -22,7 +22,7 @@ node* heap::peek(){
 }
 void heap::pushHeapify() {
     int current = len-1;
-    while(true){
+    while(current > 0){
         if(array.getNodeAt(getParentIndex(current))->getContent()->getScore() > array.getNodeAt(current)->getContent()->getScore()){
             array.swapNodes(current,getParentIndex(current));
         }else{

@@ -1,6 +1,7 @@
 #include "node.h"
 #include "scoreable.h"
 #include "../algorithms/heuristics.h"
+#include <iostream>
 void node::setContent(scoreable* a){
     content = a;
 }

@@ -1,4 +1,5 @@
 #include "list.h"
+#include <iostream>
 list::list(){
     head = new node();
     head->setChild(nullptr);
@@ -28,13 +29,10 @@ void list::removeNode(int nodeIndex){
     len--;
 }
 void list::swapNodes(int nodeA,int nodeB){
-    node* tmp;
-    tmp->setChild(getNodeAt(nodeA)->getChild());
-    tmp->setContent(getNodeAt(nodeA)->getContent());
-    getNodeAt(nodeA)->setChild(getNodeAt(nodeB)->getChild());
+    scoreable* tmp = getNodeAt(nodeA)->getContent();
     getNodeAt(nodeA)->setContent(getNodeAt(nodeB)->getContent());
-    getNodeAt(nodeB)->setChild(tmp->getChild());
-    getNodeAt(nodeB)->setContent(tmp->getContent());
+    getNodeAt(nodeB)->setContent(tmp);
+    tmp = nullptr;
     delete tmp;
 }
 void list::setContent(int nodeIndex,scoreable* nodeContent){
@@ -54,4 +52,10 @@ void list::print(){
     for(int  i =0;i<len;i++){
         std::cout<<getNodeAt(i)->getContent()->getScore()<<" ";
     }
+}
+void list::println(){
+    for(int  i =0;i<len;i++){
+        std::cout<<getNodeAt(i)->getContent()->getScore()<<" ";
+    }
+    std::cout<<std::endl;
 }

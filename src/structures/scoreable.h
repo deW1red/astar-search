@@ -5,7 +5,7 @@ class scoreable
 {
 
 public:
-    int getScore();    
+    virtual int getScore();    
     
 };
 

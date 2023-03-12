@@ -11,7 +11,7 @@ void priority_queue::balance(){
 }
 
 scoreable* priority_queue::pop(){
-
+    return new scoreable();
 }
 
 priority_queue::priority_queue(){

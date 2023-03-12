@@ -31,17 +31,34 @@ int main(){
     cout<<"\n";
     cout<<mainGrid.tileAt(5,5)->getScore(mainGrid.tileAt(0,0),mainGrid.tileAt(9,9),&cartesian);
     return 0;*/
+
+
     heap testheap;
-    testheap.push(new node(new number(10)));
+    cout<<endl;
+    for(int  i =0;i<1000;i++){
+        int a = 100+rand()%1000000;
+        testheap.push(new node(new number(a)));
+        
+    }
+    testheap.push(new node(new number(testheap.peek()->getContent()->getScore()-1)));
     cout<<"Heap: ";
     testheap.print();
     cout<<endl;
-    for(int  i =0;i<10;i++){
-        int a = rand()%100;
-        cout<<"Adding "<<a<<endl;
-        testheap.push(new node(new number(a)));
-        cout<<"Heap: ";
-        testheap.print();
-        cout<<endl;
-    }
+    /*list lista;
+    lista.pushNode(new node(new number(1)));
+    lista.pushNode(new node(new number(2)));
+    lista.pushNode(new node(new number(3)));
+    lista.pushNode(new node(new number(4)));
+    lista.pushNode(new node(new number(5)));
+    lista.pushNode(new node(new number(6)));
+    lista.pushNode(new node(new number(7)));
+    lista.pushNode(new node(new number(8)));
+    lista.pushNode(new node(new number(9)));
+    lista.pushNode(new node(new number(10)));
+    lista.pushNode(new node(new number(-1)));
+    lista.println();
+    lista.swapNodes(0,10);
+    lista.swapNodes(1,2);
+    lista.swapNodes(0,10);
+    lista.println();*/
 }

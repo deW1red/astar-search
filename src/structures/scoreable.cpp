@@ -2,4 +2,5 @@
 #include "random"
 
 int scoreable::getScore(){
+    return 1;
 }
