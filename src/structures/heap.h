@@ -1,6 +1,7 @@
 #include "scoreable.h"
 #include "list.h"
 #include <cmath>
+#include <iostream>
 #ifndef HEAP_H
 #define HEAP_H
 class heap{

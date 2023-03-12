@@ -1,4 +1,8 @@
 #include "scoreable.h"
+#include "scoreable.h"
+#include "../algorithms/heuristics.h"
+#include <iostream>
+
 #ifndef NODE_H
 #define NODE_H
 class node

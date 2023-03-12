@@ -1,6 +1,5 @@
 #include "scoreable.h"
-#include "random"
 
-int scoreable::getScore(){
+float scoreable::getScore(){
     return 1;
 }

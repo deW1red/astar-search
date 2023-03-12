@@ -6,7 +6,7 @@ class number: public scoreable{
 
     public:
     number(int numval);
-    int getScore();
+    float getScore();
 
 };
 #endif

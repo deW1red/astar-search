@@ -1,5 +1,7 @@
 #include "scoreable.h"
 #include "tilestates.h"
+#include "scoreable.h"
+#include <cmath>
 #ifndef TILE_H
 #define TILE_H
 
@@ -7,6 +9,7 @@ class tile: public scoreable
 {
     int x,y;
     state tileState;
+
 
 public:
     tile();
@@ -17,7 +20,7 @@ public:
 
     state getState();
     char printTile();
-    int getScore(tile* startTile,tile* goalTile,float (*heur)(tile* current,tile* goal));
+    float getScore();
     
 };
 

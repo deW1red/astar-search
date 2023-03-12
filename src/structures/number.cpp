@@ -4,6 +4,6 @@ number::number(int numval){
     val = numval;
 }
 
-int number::getScore(){
+float number::getScore(){
     return val;
 }

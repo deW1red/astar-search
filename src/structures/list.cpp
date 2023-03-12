@@ -1,5 +1,4 @@
 #include "list.h"
-#include <iostream>
 list::list(){
     head = new node();
     head->setChild(nullptr);
