@@ -36,29 +36,23 @@ int main(){
     heap testheap;
     cout<<endl;
     for(int  i =0;i<1000;i++){
-        int a = 100+rand()%1000000;
+        int a = rand()%100;
         testheap.push(new node(new number(a)));
         
     }
-    testheap.push(new node(new number(testheap.peek()->getContent()->getScore()-1)));
-    cout<<"Heap: ";
+    /*cout<<"Heap: ";
     testheap.print();
     cout<<endl;
-    /*list lista;
-    lista.pushNode(new node(new number(1)));
-    lista.pushNode(new node(new number(2)));
-    lista.pushNode(new node(new number(3)));
-    lista.pushNode(new node(new number(4)));
-    lista.pushNode(new node(new number(5)));
-    lista.pushNode(new node(new number(6)));
-    lista.pushNode(new node(new number(7)));
-    lista.pushNode(new node(new number(8)));
-    lista.pushNode(new node(new number(9)));
-    lista.pushNode(new node(new number(10)));
-    lista.pushNode(new node(new number(-1)));
-    lista.println();
-    lista.swapNodes(0,10);
-    lista.swapNodes(1,2);
-    lista.swapNodes(0,10);
-    lista.println();*/
+    cout<<"Popped: "<<testheap.pop()->getContent()->getScore()<<endl;
+    for(int  i =0;i<15;i++){
+        cout<<"Heap: ";
+        testheap.print();
+        cout<<endl;
+        cout<<"Popped: "<<testheap.pop()->getContent()->getScore()<<endl;   
+    }*/
+    for(int  i =0;i<1000;i++){
+        cout<<testheap.pop()->getContent()->getScore()<<" ";
+        
+    }
+
 }

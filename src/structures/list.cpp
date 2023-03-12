@@ -19,12 +19,10 @@ void list::pushNode(node* newNode){
 }
 void list::removeNode(int nodeIndex){
     if(nodeIndex == len-1){
-        delete getNodeAt(len-1);
         getNodeAt(len-2)->setChild(nullptr);
     }else{
         getNodeAt(nodeIndex)->setContent(getNodeAt(nodeIndex+1)->getContent());
         getNodeAt(nodeIndex)->setChild(getNodeAt(nodeIndex+1)->getChild());
-        delete getNodeAt(nodeIndex+1);
     }
     len--;
 }
@@ -58,4 +56,7 @@ void list::println(){
         std::cout<<getNodeAt(i)->getContent()->getScore()<<" ";
     }
     std::cout<<std::endl;
+}
+int list::getScoreAt(int nodeIndex){
+    return getNodeAt(nodeIndex)->getContent()->getScore();
 }

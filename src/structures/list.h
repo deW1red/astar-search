@@ -10,6 +10,6 @@ class list{
     list();
     void pushNode(node* newNode),removeNode(int nodeIndex),swapNodes(int nodeA,int nodeB),setContent(int nodeIndex,scoreable* nodeContent),print(),println();
     node* getNodeAt(int nodeIndex);
-    int getLength();
+    int getLength(),getScoreAt(int nodeIndex);
 };
 #endif
