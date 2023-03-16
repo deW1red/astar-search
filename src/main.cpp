@@ -12,11 +12,11 @@
 #include "algorithms/heuristics.h"
 
 using namespace std;
-static grid maingrid(10,10,0,0,9,9);
-
+grid maingrid(10,10,0,0,9,9);
+heap openlist;
 int main(){
-    srand(time(NULL));
-    maingrid.heuristicFunction = &cartesian;
-    cout<<maingrid.tileAt(5,5)->
+    openlist.push(maingrid.getStart());
+    while(openlist.getLength() > 0){
 
+    }
 }

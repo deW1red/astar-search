@@ -13,8 +13,8 @@ class heap{
     
     public:
     heap();
-    void push(node* newNode),print();
+    void push(node* newNode),push(scoreable* nodeContent),print();
     node *pop(),*peek();   
-    
+    int getLength(); 
 };
 #endif

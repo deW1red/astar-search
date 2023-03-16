@@ -1,4 +1,5 @@
 #include "tile.h"
+#include "list.h"
 #include "algorithms/heuristics.h"
 #include <iostream>
 #include <cmath> 
@@ -18,6 +19,7 @@ public:
     int getXSize(),getYSize();
     tile *tileAt(int x,int y),*getStart(),*getGoal();
     float grid::getTileScore(tile* currentTile);
+    list* getNeighbouringTiles(tile* originTile);
     void printGrid(),setStart(int x,int y),setGoal(int x,int y);
 };
 #endif

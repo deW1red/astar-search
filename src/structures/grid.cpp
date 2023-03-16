@@ -53,4 +53,62 @@ float grid::getTileScore(tile* currentTile){
      return sqrt(pow(startTile->getX()-currentTile->getX(),2)+pow(startTile->getY()-currentTile->getY(),2))+heuristicFunction(currentTile,goalTile);
 }
 
+list* grid::getNeighbouringTiles(tile* originTile){
+    list* returnList;
+    int x = originTile->getX();
+    int y = originTile->getY();
+    if(x == 0 && y == 0){
+        returnList->pushNode(new node(tileAt(x,y+1)));
+        returnList->pushNode(new node(tileAt(x+1,y)));
+        returnList->pushNode(new node(tileAt(x+1,y+1)));
+    }else if(x == xsize -1 && y == 0){
+        returnList->pushNode(new node(tileAt(x,y+1)));
+        returnList->pushNode(new node(tileAt(x-1,y)));
+        returnList->pushNode(new node(tileAt(x-1,y+1)));
+    }else if(x == 0 && y == ysize - 1){
+        returnList->pushNode(new node(tileAt(x+1,y)));
+        returnList->pushNode(new node(tileAt(x,y-1)));
+        returnList->pushNode(new node(tileAt(x+1,y-1)));
+    }else if(x == xsize -1 && y == ysize -1){
+        returnList->pushNode(new node(tileAt(x,y-1)));
+        returnList->pushNode(new node(tileAt(x-1,y)));
+        returnList->pushNode(new node(tileAt(x-1,y-1)));
+    }else if(x == 0){
+        returnList->pushNode(new node(tileAt(x,y+1)));
+        returnList->pushNode(new node(tileAt(x+1,y)));
+        returnList->pushNode(new node(tileAt(x,y-1)));
+        returnList->pushNode(new node(tileAt(x+1,y+1)));
+        returnList->pushNode(new node(tileAt(x+1,y-1)));
+    }else if(y == 0){
+        returnList->pushNode(new node(tileAt(x,y+1)));
+        returnList->pushNode(new node(tileAt(x+1,y)));
+        returnList->pushNode(new node(tileAt(x-1,y)));
+        returnList->pushNode(new node(tileAt(x-1,y+1)));
+        returnList->pushNode(new node(tileAt(x+1,y+1)));
+    }else if(x == xsize -1){
+        returnList->pushNode(new node(tileAt(x,y+1)));
+        returnList->pushNode(new node(tileAt(x,y-1)));
+        returnList->pushNode(new node(tileAt(x-1,y)));
+        returnList->pushNode(new node(tileAt(x-1,y+1)));
+        returnList->pushNode(new node(tileAt(x-1,y-1)));
+    }else if(y == ysize -1){
+        returnList->pushNode(new node(tileAt(x+1,y)));
+        returnList->pushNode(new node(tileAt(x,y-1)));
+        returnList->pushNode(new node(tileAt(x-1,y)));
+        returnList->pushNode(new node(tileAt(x+1,y-1)));
+        returnList->pushNode(new node(tileAt(x-1,y-1)));
+    }else {
+        returnList->pushNode(new node(tileAt(x,y+1)));
+        returnList->pushNode(new node(tileAt(x+1,y)));
+        returnList->pushNode(new node(tileAt(x,y-1)));
+        returnList->pushNode(new node(tileAt(x-1,y)));
+        returnList->pushNode(new node(tileAt(x-1,y+1)));
+        returnList->pushNode(new node(tileAt(x+1,y+1)));
+        returnList->pushNode(new node(tileAt(x+1,y-1)));
+        returnList->pushNode(new node(tileAt(x-1,y-1)));
+    }
+
+    return returnList;
+}
+
 

@@ -14,6 +14,11 @@ void heap::push(node* newNode){
     array.pushNode(newNode);
     pushHeapify();
 }
+void heap::push(scoreable* nodeContent){
+    len++;
+    array.pushNode(new node(nodeContent));
+    pushHeapify();
+}
 node* heap::pop(){
     if(len > 0){
         node* returnNode = array.getNodeAt(len-1);
@@ -67,4 +72,7 @@ void heap::popHeapify() {
 }
 void heap::print(){
     array.print();
+}
+int heap::getLength(){
+    return len;
 }
