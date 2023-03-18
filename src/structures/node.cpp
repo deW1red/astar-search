@@ -1,22 +1,21 @@
 #include "node.h"
-#include "scoreable.h"
 #include "../algorithms/heuristics.h"
 #include <iostream>
-void node::setContent(scoreable* a){
+void node::setContent(tile* a){
     content = a;
 }
-scoreable* node::getContent(){
+tile* node::getContent(){
     return content;
 }
 node::node(){
     child = nullptr;
     content = nullptr;
 }
-node::node(scoreable* nodeContent){
+node::node(tile* nodeContent){
     child  = nullptr;
     content = nodeContent;
 }
-node::node(scoreable* nodeContent,node* nodeChild){
+node::node(tile* nodeContent,node* nodeChild){
     child = nodeChild;
     content = nodeContent;
 }

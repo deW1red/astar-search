@@ -14,24 +14,24 @@ void heap::push(node* newNode){
     array.pushNode(newNode);
     pushHeapify();
 }
-void heap::push(scoreable* nodeContent){
+void heap::push(tile* nodeContent){
     len++;
     array.pushNode(new node(nodeContent));
     pushHeapify();
 }
-node* heap::pop(){
+tile* heap::pop(){
     if(len > 0){
         node* returnNode = array.getNodeAt(len-1);
         popHeapify();
-        return returnNode;
+        return returnNode->getContent();
     }else{
         std::cout<<"WARNING: Popped empty heap! (sus)";
     }
-    return new node(new scoreable());
+    return new tile();
     
 }
-node* heap::peek(){
-    return array.getNodeAt(0);
+tile* heap::peek(){
+    return array.getNodeAt(0)->getContent();
 }
 void heap::pushHeapify() {
     int current = len-1;
@@ -73,6 +73,23 @@ void heap::popHeapify() {
 void heap::print(){
     array.print();
 }
+void heap::printTiles(){
+    for(int  i= 0;i<array.getLength();i++){
+        std::cout<<"("<<array.getNodeAt(i)->getContent()->getX()<<","<<array.getNodeAt(i)->getContent()->getY()<<")  ";
+    }
+    std::cout<<"\n";
+}
 int heap::getLength(){
     return len;
+}
+bool heap::isTileWithLowerScoreInHeap(tile* currentTile){
+    for(int i=0;i<array.getLength();i++){
+        tile* arrayTile = array.getNodeAt(i)->getContent();
+        if(currentTile->getX() == arrayTile->getX() && currentTile->getY() == arrayTile->getY() && currentTile->getScore() > arrayTile->getScore()){
+            return true;
+        }else{
+            //std::cout<<currentTile->getScore()<<" < "<<arrayTile->getScore()<<"\n";
+        }
+    }
+    return false;
 }

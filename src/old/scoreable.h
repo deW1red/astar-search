@@ -3,10 +3,10 @@
 
 class scoreable
 {
-
+    float score;
 public:
-    virtual float getScore();    
-    
+    float getScore();    
+    void setScore(float newScore);
 };
 
 #endif

@@ -1,4 +1,3 @@
-#include "scoreable.h"
 #include "list.h"
 #include <cmath>
 #include <iostream>
@@ -13,8 +12,9 @@ class heap{
     
     public:
     heap();
-    void push(node* newNode),push(scoreable* nodeContent),print();
-    node *pop(),*peek();   
+    void push(node* newNode),push(tile* nodeContent),print(),printTiles();
+    tile *pop(),*peek();   
     int getLength(); 
+    bool isTileWithLowerScoreInHeap(tile* currentTile);
 };
 #endif

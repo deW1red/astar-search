@@ -1,5 +1,4 @@
-#include "scoreable.h"
-#include "scoreable.h"
+#include "tile.h"
 #include "../algorithms/heuristics.h"
 #include <iostream>
 
@@ -8,13 +7,13 @@
 class node
 {
     node* child;
-    scoreable *content;
+    tile *content;
 
     public:
-    void setChild(node* a),setContent(scoreable* a);
+    void setChild(node* a),setContent(tile* a);
     node *getChild();
-    scoreable* getContent();
-    node(),node(scoreable* nodeContent),node(scoreable* nodeContent,node* nodeChild);
+    tile* getContent();
+    node(),node(tile* nodeContent),node(tile* nodeContent,node* nodeChild);
 
 };
 #endif

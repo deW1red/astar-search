@@ -1,6 +1,7 @@
 #include "tile.h"
 #include "list.h"
-#include "algorithms/heuristics.h"
+#include "tilestates.h"
+#include "../algorithms/heuristics.h"
 #include <iostream>
 #include <cmath> 
 #ifndef GRID_H
@@ -13,13 +14,12 @@ class grid
     tile *startTile,*goalTile;
 
 public:
-    static float (*heuristicFunction)(tile* current,tile* goal);
+    double (*heuristicFunction)(tile* current,tile* goal);
     grid(int xSize,int ySize,int startx,int starty,int goalx,int goaly);
     
     int getXSize(),getYSize();
     tile *tileAt(int x,int y),*getStart(),*getGoal();
-    float grid::getTileScore(tile* currentTile);
-    list* getNeighbouringTiles(tile* originTile);
-    void printGrid(),setStart(int x,int y),setGoal(int x,int y);
+    list getNeighbouringTiles(tile* originTile);
+    void printGrid(),setStart(int x,int y),setGoal(int x,int y),setTileG(tile* ancestorTile,tile* currentTile),setTileH(tile* currentTile);
 };
 #endif

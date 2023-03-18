@@ -3,21 +3,24 @@ list::list(){
     head = new node();
     head->setChild(nullptr);
     head->setContent(nullptr);
-    len=1;
+    len=0;
 }
 void list::pushNode(node* newNode){
-    if(head->getContent() == nullptr){
+    if(len == 0){
         head->setContent(newNode->getContent());
         delete newNode;
     }else{
         getNodeAt(len-1)->setChild(newNode);
-        len++;
+        
     }
+    len++;
 
 
 }
 void list::removeNode(int nodeIndex){
-    if(nodeIndex == len-1){
+    if(len == 1){
+
+    }else if(nodeIndex == len-1){
         getNodeAt(len-2)->setChild(nullptr);
     }else{
         getNodeAt(nodeIndex)->setContent(getNodeAt(nodeIndex+1)->getContent());
@@ -26,14 +29,11 @@ void list::removeNode(int nodeIndex){
     len--;
 }
 void list::swapNodes(int nodeA,int nodeB){
-    scoreable* tmp = getNodeAt(nodeA)->getContent();
+    tile* tmp = getNodeAt(nodeA)->getContent();
     getNodeAt(nodeA)->setContent(getNodeAt(nodeB)->getContent());
     getNodeAt(nodeB)->setContent(tmp);
     tmp = nullptr;
     delete tmp;
-}
-void list::setContent(int nodeIndex,scoreable* nodeContent){
-    getNodeAt(nodeIndex)->setContent(nodeContent);
 }
 node* list::getNodeAt(int nodeIndex){
     node* headptr = head;
