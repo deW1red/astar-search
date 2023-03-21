@@ -1,7 +1,9 @@
 #include "grid.h"   
 
-
-grid::grid(int xSize,int ySize,int startx,int starty,int goalx,int goaly){
+grid::grid(){
+    
+}
+grid::grid(int xSize,int ySize,int startx,int starty,int goalx,int goaly,double (*gridHeuristicFunction)(tile* current,tile* goal)){
     xsize = xSize;
     ysize = ySize;
     map = new tile*[ysize];
@@ -19,7 +21,7 @@ grid::grid(int xSize,int ySize,int startx,int starty,int goalx,int goaly){
     startTile->setState(state::start);
     goalTile = tileAt(goalx,goaly);
     goalTile->setState(state::end);
-    heuristicFunction = &cartesian;
+    heuristicFunction = gridHeuristicFunction;
 
     startTile->setg(0);
     setTileH(startTile);

@@ -85,7 +85,7 @@ int heap::getLength(){
 bool heap::isTileWithLowerScoreInHeap(tile* currentTile){
     for(int i=0;i<array.getLength();i++){
         tile* arrayTile = array.getNodeAt(i)->getContent();
-        if(currentTile->getX() == arrayTile->getX() && currentTile->getY() == arrayTile->getY() && currentTile->getScore() > arrayTile->getScore()){
+        if(currentTile->getX() == arrayTile->getX() && currentTile->getY() == arrayTile->getY() && currentTile->getScore() >= arrayTile->getScore()){
             return true;
         }else{
             //std::cout<<currentTile->getScore()<<" < "<<arrayTile->getScore()<<"\n";

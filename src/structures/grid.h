@@ -15,7 +15,7 @@ class grid
 
 public:
     double (*heuristicFunction)(tile* current,tile* goal);
-    grid(int xSize,int ySize,int startx,int starty,int goalx,int goaly);
+    grid(),grid(int xSize,int ySize,int startx,int starty,int goalx,int goaly,double (*gridHeuristicFunction)(tile* current,tile* goal));
     
     int getXSize(),getYSize();
     tile *tileAt(int x,int y),*getStart(),*getGoal();
